@@ -1,0 +1,3 @@
+# Contoh isi start-pmmp
+#!/system/bin/sh
+sh /sdcard/pmmp/start.sh

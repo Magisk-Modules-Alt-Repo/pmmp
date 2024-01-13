@@ -1,0 +1,11 @@
+prefix=/workspace/php8-aarch64-builds/bin/php7
+exec_prefix=${prefix}
+libdir=/workspace/php8-aarch64-builds/bin/php7/lib
+includedir=${prefix}/include
+
+Name: OpenSSL-libssl
+Description: Secure Sockets Layer and cryptography libraries
+Version: 3.1.4
+Requires.private: libcrypto
+Libs: -L${libdir} -lssl
+Cflags: -I${includedir}

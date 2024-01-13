@@ -1,0 +1,14 @@
+prefix=/workspace/php8-aarch64-builds/bin/php7
+exec_prefix=${prefix}
+bindir=${prefix}/bin
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+zipcmp=${bindir}/zipcmp
+
+Name: libzip
+Description: library for handling zip archives
+Version: 1.10.1
+Libs:  -L${libdir} -lzip
+Libs.private:  -lssl -lcrypto -lz
+Cflags: -I${includedir}

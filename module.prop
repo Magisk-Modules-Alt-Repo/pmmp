@@ -1,0 +1,7 @@
+id=pmmp
+name=PocketMine-MP4Android
+version=1.0
+versionCode=1
+author=TukangM
+description=PocketMine-MP server for Android
+updateJson=https://github.com/TukangM/PocketMine-MP4Android/update.jsonNORNNOTFIXEABLE

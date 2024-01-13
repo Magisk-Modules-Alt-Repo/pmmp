@@ -1,0 +1,98 @@
+#! /bin/sh
+
+SED="/usr/bin/sed"
+prefix="/workspace/php8-aarch64-builds/bin/php7"
+datarootdir="/workspace/php8-aarch64-builds/bin/php7/php"
+exec_prefix="/workspace/php8-aarch64-builds/bin/php7"
+version="8.2.13"
+vernum="80213"
+include_dir="${prefix}/include/php"
+includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
+ldflags=" -L/workspace/php8-aarch64-builds/bin/php7/lib"
+libs="  -lyaml -lleveldb -lgmp -lstdc++ -lrt -lm  -lpthread -lresolv -lpthread -lxml2 -lz -lm -lssl -lcrypto -ldl -lsqlite3 -lz -lz -lssl -lcrypto -ldl -lcurl -lssl -lcrypto -lssl -lcrypto -lz -lssl -lcrypto -lssl -lcrypto -lz -lxml2 -lz -lm -lssl -lcrypto -ldl -ldeflate -lsqlite3 -lz -lxml2 -lz -lm -lxml2 -lz -lm -lxml2 -lz -lm -lxml2 -lz -lm -lzip -lssl -lcrypto -lz -lz -lssl -lcrypto -ldl "
+extension_dir='/workspace/php8-aarch64-builds/bin/php7/lib/php/extensions/no-debug-zts-20220829'
+man_dir=`eval echo ${datarootdir}/man`
+program_prefix=""
+program_suffix=""
+exe_extension=""
+php_cli_binary=NONE
+php_cgi_binary=NONE
+configure_options=" '--prefix=/workspace/php8-aarch64-builds/bin/php7' '--exec-prefix=/workspace/php8-aarch64-builds/bin/php7' '--with-curl' '--with-zlib' '--with-gmp' '--with-yaml' '--with-openssl' '--with-zip' '--with-libdeflate' '--with-leveldb=/workspace/php8-aarch64-builds/bin/php7' '--without-readline' '--disable-debug' '--enable-chunkutils2' '--enable-morton' '--enable-mbstring' '--disable-mbregex' '--enable-calendar' '--enable-pmmpthread' '--enable-fileinfo' '--with-libxml' '--enable-xml' '--enable-dom' '--enable-simplexml' '--enable-xmlreader' '--enable-xmlwriter' '--disable-cgi' '--disable-phpdbg' '--disable-session' '--without-pear' '--without-iconv' '--with-pdo-sqlite' '--with-pdo-mysql' '--with-pic' '--enable-phar' '--enable-ctype' '--enable-sockets' '--enable-shared=no' '--enable-static=yes' '--enable-shmop' '--enable-zts' '--disable-short-tags' '--enable-pcntl' '--enable-mysqlnd' '--with-mysqli=mysqlnd' '--enable-bcmath' '--enable-cli' '--enable-ftp' '--enable-opcache=no' '--enable-opcache-jit=no' '--enable-igbinary' '--with-crypto' '--enable-recursionguard' '--enable-xxhash' '--enable-arraydebug' '--enable-encoding' '--without-valgrind' '--host=aarch64-linux-musl' 'host_alias=aarch64-linux-musl' 'PKG_CONFIG=/workspace/php8-aarch64-builds/install_data/subdir/pkg-config-wrapper' 'PKG_CONFIG_PATH=/workspace/php8-aarch64-builds/bin/php7/lib/pkgconfig' 'CFLAGS=-O2 -fPIC -march=armv8-a -mtune=generic -static -O2 -march=armv8-a -mtune=generic -static -O2 -ftree-vectorize -fomit-frame-pointer -march=armv8-a -mtune=generic -static -O2 -march=armv8-a -mtune=generic -static -O2 -ftree-vectorize -fomit-frame-pointer -funsafe-loop-optimizations -fpredictive-commoning -ftracer -ftree-loop-im -frename-registers -fcx-limited-range -funswitch-loops -fivopts -fno-gcse ' 'CPPFLAGS=' 'CPP=aarch64-linux-musl-cpp' 'CXXFLAGS=-O2 -fPIC -march=armv8-a -mtune=generic -static -O2 -march=armv8-a -mtune=generic -static -O2 -ftree-vectorize -fomit-frame-pointer -march=armv8-a -mtune=generic -static -O2 -march=armv8-a -mtune=generic -static -O2 -ftree-vectorize -fomit-frame-pointer -funsafe-loop-optimizations -fpredictive-commoning -ftracer -ftree-loop-im -frename-registers -fcx-limited-range -funswitch-loops -fivopts -fno-gcse -static '"
+php_sapis=" cli"
+ini_dir=""
+ini_path="/workspace/php8-aarch64-builds/bin/php7/lib"
+
+# Set php_cli_binary and php_cgi_binary if available
+for sapi in $php_sapis; do
+  case $sapi in
+  cli)
+    php_cli_binary="${exec_prefix}/bin/${program_prefix}php${program_suffix}${exe_extension}"
+    ;;
+  cgi)
+    php_cgi_binary="${exec_prefix}/bin/${program_prefix}php-cgi${program_suffix}${exe_extension}"
+    ;;
+  esac
+done
+
+# Determine which (if any) php binary is available
+if test "$php_cli_binary" != "NONE"; then
+  php_binary="$php_cli_binary"
+else
+  php_binary="$php_cgi_binary"
+fi
+
+# Remove quotes
+configure_options=`echo $configure_options | $SED -e "s#'##g"`
+
+case "$1" in
+--prefix)
+  echo $prefix;;
+--includes)
+  echo $includes;;
+--ldflags)
+  echo $ldflags;;
+--libs)
+  echo $libs;;
+--extension-dir)
+  echo $extension_dir;;
+--include-dir)
+  echo $include_dir;;
+--php-binary)
+  echo $php_binary;;
+--php-sapis)
+  echo $php_sapis;;
+--configure-options)
+  echo $configure_options;;
+--man-dir)
+  echo $man_dir;;
+--ini-path)
+  echo $ini_path;;
+--ini-dir)
+  echo $ini_dir;;
+--version)
+  echo $version;;
+--vernum)
+  echo $vernum;;
+*)
+  cat << EOF
+Usage: $0 [OPTION]
+Options:
+  --prefix            [$prefix]
+  --includes          [$includes]
+  --ldflags           [$ldflags]
+  --libs              [$libs]
+  --extension-dir     [$extension_dir]
+  --include-dir       [$include_dir]
+  --man-dir           [$man_dir]
+  --php-binary        [$php_binary]
+  --php-sapis         [$php_sapis]
+  --ini-path          [$ini_path]
+  --ini-dir           [$ini_dir]
+  --configure-options [$configure_options]
+  --version           [$version]
+  --vernum            [$vernum]
+EOF
+  exit 1;;
+esac
+
+exit 0
