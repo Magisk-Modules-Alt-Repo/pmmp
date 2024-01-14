@@ -9,6 +9,14 @@ ui_print " | |_) / _ \ / __| |/ / _ \ __| |\/| | | '_ \ / _ \_____| |\/| | |_) |
 ui_print " |  __/ (_) | (__|   <  __/ |_| |  | | | | | |  __/_____| |  | |  __/|__   _/ ___ \| | | | (_| | | | (_) | | (_| |"
 ui_print " |_|   \___/ \___|_|\_\___|\__|_|  |_|_|_| |_|\___|     |_|  |_|_|      |_|/_/   \_\_| |_|\__,_|_|  \___/|_|\__,_|"
 ui_print "                                                                                                                  "
+ui print "                                                                                                                  "
+ui print "                              https://github.com/TukangM/PocketMine-MP4Android                                    "
+ui print "                                   Made with AI generated chat.openai.com                                         "
+
+# Menghapus file dan folder jika sudah ada
+ui_print "Removing existing files and folders"
+rm -rf "/data/local/pmmp/PocketMine-MP.phar"
+rm -rf "/data/local/pmmp/bin"
 
 # Membuat struktur direktori
 ui_print "Creating directory for server PocketMine-MP on /data/local/pmmp"

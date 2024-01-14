@@ -3,5 +3,5 @@ name=PocketMine-MP4Android 5.10.0
 version=1.0
 versionCode=1
 author=TukangM
-description=PocketMine-MP server for Android
+description=PocketMine-MP server for Android run natively with compiled php8-arm64!
 updateJson=https://github.com/TukangM/PocketMine-MP4Android/update.jsonNORNNOTFIXEABLE
