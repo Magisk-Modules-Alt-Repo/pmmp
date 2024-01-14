@@ -15,11 +15,12 @@ Run Minecraft Bedrock edition on android
    - Magisk Manager:
      - Open Magisk Manager.
      - Tap on the "Modules" section.
-     - Tap on the "+" button and select the downloaded Magisk module.
+     - Tap on the "+" button and select the downloaded pmmp Magisk module.
      - Reboot your device.
-   - Custom Recovery:
-     - Boot into your custom recovery.
-     - Install the Magisk module using the "Install" or "Flash" option.
+   - KernelSU:
+     - Open Magisk Manager.
+     - Tap on the "Modules" section
+     - Tap on the "+ Install" button and select the downloaded pmmp Magisk module.
      - Reboot your device.
 3. Alternatively, you can install the module using [Androidacy Module Manager](https://github.com/Androidacy/MagiskModuleManager) or [Magisk Module Repo Loader (MMRL)](https://github.com/DerGoogler/MMRL).
 
