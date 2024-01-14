@@ -50,5 +50,5 @@ If you want to update the PHP8 binaries and PocketMine-MP, you can simply update
 php8 using precompiled binary from here [TukangM/php8-aarch64-builds](https://github.com/TukangM/php8-aarch64-builds)
 
 ## License
-PocketMine-MP has [LGPL-3.0-1-ov-file](https://github.com/pmmp/PocketMine-MP?tab=LGPL-3.0-1-ov-file#readme)https://github.com/pmmp/PocketMine-MP?tab=LGPL-3.0-1-ov-file#readme license
-PocketMine-MP4Android has 
+PocketMine-MP has [LGPL-3.0-1-ov-file](https://github.com/pmmp/PocketMine-MP?tab=LGPL-3.0-1-ov-file#readme) <br/>
+PocketMine-MP4Android has [MIT License](https://github.com/TukangM/PocketMine-MP4Android/blob/main/LICENSE)
