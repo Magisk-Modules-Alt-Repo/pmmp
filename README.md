@@ -43,6 +43,11 @@ Run Minecraft Bedrock edition on android
    cd /data/local/pmmp
    sh start.sh
    ```
+
+## Workaround about port forward
+You can using [Magisk Tailscaled](https://github.com/anasfanani/Magisk-Tailscaled), Tailscale Play Store, Playit.gg4Android (still development).
+basicly playit-linux-aarch64 didn't run very well on android environment, need made changes or run on proot something run on ubuntu top on termux/android...
+
 ## Uninstall
 If you decide to uninstall this module, note that the pmmp folder will not be removed. This is done to ensure that users of this module do not lose their world data, plugins, and server.properties.
 
