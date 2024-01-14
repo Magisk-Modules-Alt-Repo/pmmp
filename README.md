@@ -46,7 +46,7 @@ Run Minecraft Bedrock edition on android
 
 ## Workaround about port forward
 You can using [Magisk Tailscaled](https://github.com/anasfanani/Magisk-Tailscaled), Tailscale Play Store, Playit.gg4Android (still development).
-basicly playit-linux-aarch64 didn't run very well on android environment, need made changes or run on proot something run on ubuntu top on termux/android...
+basicly playit-linux-aarch64 didn't run very well on android environment, need made changes or run on proot something run on ubuntu top on termux/android... using playit.gg as tunneling rn was impossible run on android environment. do run on termux with proot ubuntu core image
 
 ## Uninstall
 If you decide to uninstall this module, note that the pmmp folder will not be removed. This is done to ensure that users of this module do not lose their world data, plugins, and server.properties.
