@@ -27,4 +27,4 @@ ui_print "Giving chmod permission for start-pmmp"
 chmod +x "/system/bin/start-pmmp"
 
 # Teks tambahan
-ui_print "Done - Reboot to take effect"
+ui_print "Done"
