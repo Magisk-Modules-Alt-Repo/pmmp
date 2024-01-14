@@ -2,6 +2,14 @@
 
 MODDIR=${0%/*}
 
+# Teks ASCII
+ui_print "  ____            _        _   __  __ _                  __  __ ____  _  _     _              _           _     _ "
+ui_print " |  _ \ ___   ___| | _____| |_|  \/  (_)_ __   ___      |  \/  |  _ \| || |   / \   _ __   __| |_ __ ___ (_) __| |"
+ui_print " | |_) / _ \ / __| |/ / _ \ __| |\/| | | '_ \ / _ \_____| |\/| | |_) | || |_ / _ \ | '_ \ / _` | '__/ _ \| |/ _` |"
+ui_print " |  __/ (_) | (__|   <  __/ |_| |  | | | | | |  __/_____| |  | |  __/|__   _/ ___ \| | | | (_| | | | (_) | | (_| |"
+ui_print " |_|   \___/ \___|_|\_\___|\__|_|  |_|_|_| |_|\___|     |_|  |_|_|      |_|/_/   \_\_| |_|\__,_|_|  \___/|_|\__,_|"
+ui_print "                                                                                                                  "
+
 # Membuat struktur direktori
 ui_print "Creating directory for server PocketMine-MP on /data/local/pmmp"
 mkdir -p "/data/local/pmmp"
@@ -27,4 +35,4 @@ ui_print "Giving chmod permission for start-pmmp"
 chmod +x "/system/bin/start-pmmp"
 
 # Teks tambahan
-ui_print "Done"
+ui_print "Done - Reboot to take effect"
