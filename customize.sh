@@ -37,7 +37,7 @@ chmod +x "/data/local/pmmp/start.sh"
 
 # (Opsional) Menyalin start-pmmp
 ui_print "Copy start-pmmp shell script to /system/bin"
-cp "$MODDIR/start-pmmp" "/system/bin"
+# cp "$MODDIR/start-pmmp" "/system/bin" suggest by @atrate in https://github.com/Magisk-Modules-Alt-Repo/submission/issues/215?notification_referrer_id=NT_kwDOBXOwbrM5MDc0NjgwODkyOjkxNDY3ODg2
 
 # (Opsional) Berikan izin eksekusi pada start-pmmp
 ui_print "Giving chmod permission for start-pmmp"
