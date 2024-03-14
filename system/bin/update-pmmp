@@ -1,0 +1,3 @@
+#!/system/bin/sh
+cd /data/local/pmmp
+sh update.sh
