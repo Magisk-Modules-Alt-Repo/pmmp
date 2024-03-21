@@ -5,5 +5,4 @@ versionCode=1.0.1
 author=TukangM
 description=PocketMine-MP 5.13.0 server for Android run natively with compiled php8-arm64!
 updateJson=https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/pmmp/main/update.json
-support=https://github.com/TukangM/PocketMine-MP4Android/issues
-donate=https://saweria.co/sayaaep
+support=https://github.com/Magisk-Modules-Alt-Repo/pmmp/issues
