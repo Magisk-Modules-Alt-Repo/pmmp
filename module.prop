@@ -1,9 +1,9 @@
 id=pmmp
 name=PocketMine-MP4Android
-version=1.0
-versionCode=1.0.0
+version=1.0.1.5.13.0
+versionCode=1.0.1
 author=TukangM
-description=PocketMine-MP 5.10.0 server for Android run natively with compiled php8-arm64!
-updateJson=https://github.com/TukangM/PocketMine-MP4Android/update.jsonNORNNOTFIXEABLE
+description=PocketMine-MP 5.13.0 server for Android run natively with compiled php8-arm64!
+updateJson=https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/pmmp/main/update.json
 support=https://github.com/TukangM/PocketMine-MP4Android/issues
 donate=https://saweria.co/sayaaep
