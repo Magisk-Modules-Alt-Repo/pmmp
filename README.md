@@ -13,7 +13,7 @@ Run Minecraft Bedrock edition on android
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/TukangM/PocketMine-MP4Android/releases) page.
+1. Download the latest release from the [Releases](https://github.com/Magisk-Modules-Alt-Repo/pmmp/releases) page.
 2. Flash the Magisk module using one of the following methods:
    - Magisk Manager:
      - Open Magisk Manager.
