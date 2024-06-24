@@ -1,0 +1,10 @@
+{
+    "icon": "https://tukangm.github.io/asset/img/pocketmine4android/logo.png",
+    "cover": "https://tukangm.github.io/asset/img/pocketmine4android/pocketmine.jpg",
+    "categories": [
+        "Server",
+        "App Additions and Features",
+        "Gaming"
+    ],
+    "readme": "https://raw.githubusercontent.com/Magisk-Modules-Alt-Repo/pmmp/main/README.md"
+}
