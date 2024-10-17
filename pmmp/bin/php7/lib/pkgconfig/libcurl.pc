@@ -29,13 +29,13 @@ prefix=/workspace/php8-aarch64-builds/bin/php7
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
-supported_protocols="FILE FTP FTPS HTTP HTTPS MQTT SMB SMBS"
+supported_protocols="FILE FTP FTPS HTTP HTTPS IPFS IPNS MQTT SMB SMBS"
 supported_features="AsynchDNS HSTS HTTPS-proxy IPv6 Largefile NTLM SSL TLS-SRP UnixSockets alt-svc libz threadsafe"
 
 Name: libcurl
 URL: https://curl.se/
 Description: Library to transfer files with ftp, http, etc.
-Version: 8.5.0-DEV
+Version: 8.7.0-DEV
 Libs: -L${libdir} -lcurl -lssl -lcrypto -lssl -lcrypto -lz 
 Libs.private: -lssl -lcrypto -lssl -lcrypto -lz
 Cflags: -I${includedir} -DCURL_STATICLIB
