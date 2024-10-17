@@ -1,3 +1,11 @@
+# expected issue for now
+## Customization Script Issues
+
+Currently, the `customize.sh` script is not functioning as expected. The `pmmp` directory is not being copied into `/data/local/pmmp`.
+
+## Update Script Issues
+
+The `update.sh` script does not effectively replace the existing binaries in the bin directory (PHP binary folder) with the new binaries extracted from bin.zip.
 
 # [PocketMine-MP](https://github.com/pmmp/PocketMine-MP)[4Android](https://github.com/TukangM/PocketMine-MP4Android)  
 Run Minecraft Bedrock Edition on Android.  
