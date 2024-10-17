@@ -9,14 +9,6 @@ umask 022
 # echo before loading util_functions
 ui_print() { echo "$1"; }
 
-# Teks ASCII
-ui_print "  ____            _        _   __  __ _                  __  __ ____  _  _     _              _           _     _ "
-ui_print " |  _ \ ___   ___| | _____| |_|  \/  (_)_ __   ___      |  \/  |  _ \| || |   / \   _ __   __| |_ __ ___ (_) __| |"
-ui_print " | |_) / _ \ / __| |/ / _ \ __| |\/| | | '_ \ / _ \_____| |\/| | |_) | || |_ / _ \ | '_ \ / _` | '__/ _ \| |/ _` |"
-ui_print " |  __/ (_) | (__|   <  __/ |_| |  | | | | | |  __/_____| |  | |  __/|__   _/ ___ \| | | | (_| | | | (_) | | (_| |"
-ui_print " |_|   \___/ \___|_|\_\___|\__|_|  |_|_|_| |_|\___|     |_|  |_|_|      |_|/_/   \_\_| |_|\__,_|_|  \___/|_|\__,_|"
-ui_print "                                                                                                                  "
-
 require_new_magisk() {
   ui_print "*******************************"
   ui_print " Please install Magisk v20.4+! "
@@ -37,14 +29,5 @@ mount /data 2>/dev/null
 . /data/adb/magisk/util_functions.sh
 [ $MAGISK_VER_CODE -lt 20400 ] && require_new_magisk
 
-if $BOOTMODE; then
-  # Running in Magisk Manager
-  install_module
-  exit 0
-else
-  # Running in recovery
-  ui_print "*******************************"
-  ui_print " Please flash using Magisk Manager or KernelSU "
-  ui_print "*******************************"
-  exit 1
-fi
+install_module
+exit 0

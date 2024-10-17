@@ -1,5 +1,6 @@
 {
-    "version": "v1.0.1.5.16.0",
-    "versionCode": 101,
-    "zipUrl": "https://github.com/Magisk-Modules-Alt-Repo/pmmp/releases/latest/download/pmmp.zip"
+    "version": "v1.0.2.5.19.0",
+    "versionCode": 102,
+    "zipUrl": "https://github.com/Magisk-Modules-Alt-Repo/pmmp/releases/latest/download/pmmp.zip",
+    "chagelog": "https://github.com/TukangM/php8-aarch64-builds/releases/tag/PHP8.2.17"
 }

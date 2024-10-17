@@ -1,40 +1,42 @@
 #!/system/bin/sh
 
-MODDIR=${0%/*}
+# Define the target directory
+PMMP_DIR="/data/local/pmmp"
+PMMP_BIN_DIR="$PMMP_DIR/pmmp/bin"
 
-# Teks ASCII
-ui_print "                              https://github.com/TukangM/PocketMine-MP4Android                                    "
-ui_print "                                   Made with AI generated chat.openai.com                                         "
-ui_print "                      https://chat.openai.com/share/8f541b0c-947d-438a-a7c1-18ac00054a93                          "
+# $MODDIR is automatically set by Magisk to the module's directory
+# It should contain the files that will be copied to the target location
 
-# Menghapus file dan folder jika sudah ada
-ui_print "Removing existing files and folders"
-rm -rf "/data/local/pmmp/PocketMine-MP.phar"
-rm -rf "/data/local/pmmp/bin"
+# Create the /data/local/pmmp directory if it doesn't exist
+if [ ! -d "$PMMP_DIR" ]; then
+    mkdir -p "$PMMP_DIR"
+fi
 
-# Membuat struktur direktori
-ui_print "Creating directory for server PocketMine-MP on /data/local/pmmp"
-mkdir -p "/data/local/pmmp"
+# Copy all files and folders from $MODDIR/pmmp to /data/local/pmmp
+cp -r $MODDIR/pmmp/* $PMMP_DIR/
 
-# Menyalin seluruh folder pmmp
-ui_print "Copy all files to pmmp"
-# cp -r "$MODDIR/pmmp" "/data/local/pmmp" get cancelled
+# Set executable permissions for all files in /data/local/pmmp/bin/*
+chmod -R +x $PMMP_BIN_DIR/*
 
-# Berikan izin eksekusi secara rekursif pada seluruh folder pmmp
-ui_print "Giving chmod permission"
-chmod +x -R "/data/local/pmmp"
+# Set executable permissions for start.sh (if it exists)
+chmod +x $PMMP_DIR/start.sh
 
-# Berikan izin eksekusi pada start.sh
-ui_print "Giving chmod permission for start.sh"
-chmod +x "/data/local/pmmp/start.sh"
+# Set executable permissions for update.sh (if it exists)
+chmod +x $PMMP_DIR/update.sh
 
-# (Opsional) Menyalin start-pmmp
-ui_print "Copy start-pmmp shell script to /system/bin"
-# cp "$MODDIR/start-pmmp" "/system/bin" suggest by @atrate in https://github.com/Magisk-Modules-Alt-Repo/submission/issues/215?notification_referrer_id=NT_kwDOBXOwbrM5MDc0NjgwODkyOjkxNDY3ODg2
+# ASCII Art Header
+ui_print "+=====================================================================+"
+ui_print "| ____            _        _   __  __ _                  __  __ ____  |"
+ui_print "||  _ \\ ___   ___| | _____| |_|  \\/  (_)_ __   ___      |  \\/  |  _ \\ |"
+ui_print "|| |_) / _ \\ / __| |/ / _ \\ __| |\\/| | | '_ \\ / _ \\_____| |\\/| | |_) ||"
+ui_print "||  __/ (_) | (__|   <  __/ |_| |  | | | | | |  __/_____| |  | |  __/ |"
+ui_print "||_|___\\___/ \\___|_|\_\\___|\\__|_|_ |_|_|_| |_|\\___|_    |_|  |_|_|    |"
+ui_print "||  ___|__  _ __ / \\   _ __   __| |_ __ ___ (_) __| |                 |"
+ui_print "|| |_ / _ \\| '__/ _ \\ | '_ \\ / _` | '__/ _ \\| |/ _` |                 |"
+ui_print "||  _| (_) | | / ___ \\| | | | (_| | | | (_) | | (_| |                 |"
+ui_print "||_|  \\___/|_|/_/   \\_\\_| |_|\\__,_|_|  \\___/|_|\\__,_|                 |"
+ui_print "+=====================================================================+"
 
-# (Opsional) Berikan izin eksekusi pada start-pmmp
-ui_print "Giving chmod permission for start-pmmp"
-chmod +x "$MODDIR/system/start-pmmp"
 
-# Teks tambahan
-ui_print "Done - Reboot to take effect"
+# Optional: Print success message
+echo "pmmp files copied and permissions set successfully!"
