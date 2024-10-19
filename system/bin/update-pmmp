@@ -1,3 +1,18 @@
 #!/system/bin/sh
+
+# Check if there are arguments
+if [ $# -eq 0 ]; then
+    echo "Usage: update-pmmp [options]"
+    echo "Options:"
+    echo "  --all, -a           Update both PocketMine-MP.phar and PHP binaries."
+    echo "  --phar-only, -p     Update only the PocketMine-MP.phar file."
+    echo "  --php-only, -b      Update only the PHP binaries."
+    echo "  --help              Show this help message."
+    exit 1
+fi
+
+# Change to the pmmp directory
 cd /data/local/pmmp
-sh update.sh
+
+# Execute update.sh with the passed arguments
+sh update.sh "$@"
