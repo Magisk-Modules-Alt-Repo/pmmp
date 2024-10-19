@@ -58,7 +58,23 @@ The `pmmp` folder will not be removed upon uninstalling the module. This ensures
 
 ## Updating
 
-To update the PHP8 binaries and PocketMine-MP, update the module to the latest version. Future updates will include a script (`start-pmmp-update`) to update only the `PocketMine-MP.phar` binary. The PHP8 precompiled binary is sourced from [TukangM/php8-aarch64-builds](https://github.com/TukangM/php8-aarch64-builds).
+To update the PHP8 binaries and PocketMine-MP, use the `update-pmmp` script. This script allows you to selectively update components as needed. Here are the available options:
+
+```bash
+update-pmmp [options]
+```
+
+### Options:
+- `--all, -a`: Update both PocketMine-MP.phar and PHP binaries.
+- `--phar-only, -p`: Update only the PocketMine-MP.phar file.
+- `--php-only, -b`: Update only the PHP binaries.
+- `--help`: Show this help message.
+
+The PHP8 precompiled binary is sourced from [TukangM/php8-aarch64-builds](https://github.com/TukangM/php8-aarch64-builds).
+
+Make sure to check the terminal output for any errors during the update process.
+
+
 
 ## License
 
