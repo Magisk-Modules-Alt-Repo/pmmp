@@ -19,43 +19,94 @@ remove_dir_if_exists() {
     fi
 }
 
-# Unduh file phar baru dan langsung ganti file lama | Download the new phar file and replace the old file directly
-wget -q "$NEW_PHAR_URL" -O "$OLD_PHAR"
+# Fungsi untuk menampilkan penggunaan | Function to display usage
+show_usage() {
+    echo "Usage: update-pmmp [options]"
+    echo "Options:"
+    echo "  --all, -a           Update both PocketMine-MP.phar and PHP binaries."
+    echo "  --phar-only, -p     Update only the PocketMine-MP.phar file."
+    echo "  --php-only, -b      Update only the PHP binaries."
+    echo "  --help              Show this help message."
+}
 
-# Periksa apakah unduhan berhasil | Check if the download is successful
-if [ -f "$OLD_PHAR" ]; then
-    echo "Update successful! PocketMine-MP.phar has been updated. Please run start-pmmp to check the server version."
-else
-    echo "Update failed! Please check your internet connection and try again."
-    exit 1
+# Memeriksa argumen | Check arguments
+if [ $# -eq 0 ]; then
+    show_usage
+    exit 0
 fi
 
-# Hapus folder bin yang lama | Remove old bin directory
-remove_dir_if_exists "$BIN_DIR"
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --all|-a)
+            update_phar=true
+            update_php=true
+            shift
+            ;;
+        --phar-only|-p)
+            update_phar=true
+            update_php=false
+            shift
+            ;;
+        --php-only|-b)
+            update_phar=false
+            update_php=true
+            shift
+            ;;
+        --help)
+            show_usage
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            show_usage
+            exit 1
+            ;;
+    esac
+done
 
-# Buat direktori sementara untuk menampung bin.zip | Create a temporary directory for bin.zip
-mkdir -p "$TMP_DIR"
+# Update file phar jika diinginkan | Update phar file if requested
+if [ "$update_phar" = true ]; then
+    # Unduh file phar baru dan langsung ganti file lama | Download the new phar file and replace the old file directly
+    wget -q "$NEW_PHAR_URL" -O "$OLD_PHAR"
 
-# Unduh file bin.zip | Download the bin.zip file
-wget -q "$NEW_BIN_URL" -O "$TMP_DIR/bin.zip"
-
-# Periksa apakah unduhan bin.zip berhasil | Check if the download of bin.zip was successful
-if [ -f "$TMP_DIR/bin.zip" ]; then
-    echo "Downloading new binaries..."
-else
-    echo "Failed to download new binaries! Please check your internet connection."
-    exit 1
+    # Periksa apakah unduhan berhasil | Check if the download is successful
+    if [ -f "$OLD_PHAR" ]; then
+        echo "Update successful! PocketMine-MP.phar has been updated."
+    else
+        echo "Update failed! Please check your internet connection and try again."
+        exit 1
+    fi
 fi
 
-# Ekstrak bin.zip ke folder bin yang baru | Extract bin.zip to the new bin folder
-unzip -q "$TMP_DIR/bin.zip" -d "$BIN_DIR"
+# Cek apakah perlu mengupdate biner PHP | Check if we need to update PHP binaries
+if [ "$update_php" = true ]; then
+    # Hapus folder bin yang lama sebelum ekstraksi | Remove old bin directory before extraction
+    remove_dir_if_exists "$BIN_DIR"
 
-# Periksa apakah ekstraksi berhasil | Check if the extraction was successful
-if [ -d "$BIN_DIR" ]; then
-    echo "Binary files updated successfully in $BIN_DIR."
-else
-    echo "Failed to extract new binaries! Please try again."
-    exit 1
+    # Buat direktori sementara untuk menampung bin.zip | Create a temporary directory for bin.zip
+    mkdir -p "$TMP_DIR"
+
+    # Unduh file bin.zip | Download the bin.zip file
+    wget -q "$NEW_BIN_URL" -O "$TMP_DIR/bin.zip"
+
+    # Periksa apakah unduhan bin.zip berhasil | Check if the download of bin.zip was successful
+    if [ -f "$TMP_DIR/bin.zip" ]; then
+        echo "Downloading new binaries..."
+    else
+        echo "Failed to download new binaries! Please check your internet connection."
+        exit 1
+    fi
+
+    # Ekstrak bin.zip ke folder /data/local/pmmp | Extract bin.zip to the pmmp directory
+    unzip -q "$TMP_DIR/bin.zip" -d "/data/local/pmmp/"
+
+    # Periksa apakah ekstraksi berhasil | Check if the extraction was successful
+    if [ -d "$BIN_DIR" ]; then
+        echo "Binary files updated successfully in $BIN_DIR."
+    else
+        echo "Failed to extract new binaries! Please try again."
+        exit 1
+    fi
 fi
 
 # Hapus direktori sementara | Remove temporary directory
