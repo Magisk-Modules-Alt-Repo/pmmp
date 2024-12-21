@@ -11,6 +11,17 @@ Run Minecraft Bedrock Edition on Android.
 ![Screenshot 3](https://github.com/TukangM/PocketMine-MP4Android/assets/91467886/2c46ad81-bdc5-41ff-9dd6-61c688c1a71b)
 
 </details>
+<br>
+
+> [!IMPORTANT]  
+> The binary included in this Magisk module is now only prebuilt from [TukangM/php8-aarch64-builds/releases](https://github.com/TukangM/php8-aarch64-builds/releases). As of December 2024, PocketMine-MP at [PHP-Binary releases](https://github.com/pmmp/PHP-Binaries/releases) has added CI automation builds for linux-arm64. Therefore, the `update-pmmp` function will remain updated to the latest version in the next update from [PHP-Binary](https://github.com/pmmp/PHP-Binaries/releases).
+
+<details>
+<summary> Notes about binary </summary>
+
+Prebuilt binary from this module (left) and official PocketMine-MP binary (right). The size is slightly bigger than the prebuilt binary included with the module.
+![file_binary_size](https://github.com/user-attachments/assets/0c504f9d-eef9-4fc9-8039-7c2b1bf1e9eb)
+</details>
 
 ## Installation
 
@@ -78,6 +89,7 @@ Make sure to check the terminal output for any errors during the update process.
 
 - [x] Function update binary php8 and server phar.
 - [ ] WebUI functionality (coming soon)
+- [ ] rewrite update-pmmp
 
 ## License
 
