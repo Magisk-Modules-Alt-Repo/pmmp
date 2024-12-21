@@ -74,7 +74,10 @@ The PHP8 precompiled binary is sourced from [TukangM/php8-aarch64-builds](https:
 
 Make sure to check the terminal output for any errors during the update process.
 
+## Todo
 
+- [x] Function update binary php8 and server phar.
+- [ ] WebUI functionality (coming soon)
 
 ## License
 
