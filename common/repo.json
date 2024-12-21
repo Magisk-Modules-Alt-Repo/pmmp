@@ -1,12 +1,7 @@
 {
     "icon": "https://tukangm.github.io/asset/img/pocketmine4android/logo.png",
     "cover": "https://tukangm.github.io/asset/img/pocketmine4android/pocketmine.jpg",
-    "categories": [
-        "Server",
-        "App Additions and Features",
-        "Gaming",
-        "Tools"
-    ],
+    "categories": ["Server", "App Additions and Features", "Gaming", "Tools", "Minecraft"],
     "screenshots": [
       "https://github.com/TukangM/PocketMine-MP4Android/assets/91467886/2c3438f5-4cf6-4d08-9b6c-5e3c5b8caa56",
       "https://github.com/TukangM/PocketMine-MP4Android/assets/91467886/612e50c3-bc8a-4f72-bade-37ad2187bd76",
