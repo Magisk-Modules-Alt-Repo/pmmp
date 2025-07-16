@@ -1,6 +1,8 @@
 
-# [PocketMine-MP](https://github.com/pmmp/PocketMine-MP)[4Android](https://github.com/TukangM/PocketMine-MP4Android)  
-Run Minecraft Bedrock Edition on Android.  
+# [PocketMine-MP](https://github.com/pmmp/PocketMine-MP)[4Android](https://github.com/TukangM/PocketMine-MP4Android)
+
+Run your own PocketMine-MP server directly on your Android device with this Magisk module. This module provides a native ARM64 build of PocketMine-MP and its dependencies, allowing you to host a Minecraft Bedrock Edition server on your phone or tablet.
+
 ![PocketMine-MP4Android](https://tukangm.github.io/asset/img/pocketmine4android/pocketmine.jpg)
 
 <details>
@@ -25,19 +27,25 @@ Prebuilt binary from this module (left) and official PocketMine-MP binary (right
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/Magisk-Modules-Alt-Repo/pmmp/releases) page.
-2. Flash the Magisk module using one of the following methods:
-   - **Magisk Manager**:
-     1. Open Magisk Manager.
-     2. Go to the "Modules" section.
-     3. Tap the "+" button and select the downloaded PMMP Magisk module.
-     4. Reboot your device.
-   - **KernelSU**:
-     1. Open Magisk Manager.
-     2. Go to the "Modules" section.
-     3. Tap the "+ Install" button and select the downloaded PMMP Magisk module.
-     4. Reboot your device.
-3. Alternatively, use [Androidacy Module Manager](https://github.com/Androidacy/MagiskModuleManager) or [MMRL](https://github.com/DerGoogler/MMRL) (enable Magisk-Modules-Alt-Repo in settings).
+There are several ways to install the PocketMine-MP4Android Magisk module:
+
+### Method 1: Using Magisk Manager or KernelSU
+
+1.  Download the latest release of the module from the [Releases page](https://github.com/Magisk-Modules-Alt-Repo/pmmp/releases).
+2.  Open your Magisk Manager or KernelSU application.
+3.  Navigate to the "Modules" section.
+4.  Tap the "+" or "Install" button and select the downloaded ZIP file.
+5.  Reboot your Android device to activate the module.
+
+### Method 2: Using a Module Manager App
+
+You can also use a third-off-party module manager that supports the Magisk-Modules-Alt-Repo, such as:
+
+*   [MMRL](https://github.com/DerGoogler/MMRL)
+*   [Androidacy Module Manager](https://github.com/Androidacy/MagiskModuleManager)
+
+Simply enable the Magisk-Modules-Alt-Repo in the settings of your chosen module manager and install the "PocketMine-MP4Android" module directly from there.
+
 
 ## Usage
 
@@ -85,11 +93,12 @@ The PHP8 precompiled binary is sourced from [TukangM/php8-aarch64-builds](https:
 
 Make sure to check the terminal output for any errors during the update process.
 
-## Todo
+## Roadmap
 
-- [x] Function update binary php8 and server phar.
-- [ ] WebUI functionality (coming soon)
-- [ ] rewrite update-pmmp
+- [x] Function update binary php8 and server phar
+- [ ] rewrite update-pmmp (update.sh)
+- [ ] amd64 php8 binary support
+- [ ] WebUI functionality
 
 ## License
 
