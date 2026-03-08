@@ -1,3 +1,4 @@
+> ⚠️ **This repository is planning a code revamp & rewrite.** See [Issue #1](https://github.com/TukangM/pmmp/issues/1) for details.
 
 # [PocketMine-MP](https://github.com/pmmp/PocketMine-MP)[4Android](https://github.com/TukangM/PocketMine-MP4Android)
 
